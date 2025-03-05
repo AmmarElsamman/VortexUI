@@ -467,7 +467,7 @@ background-image: url(:/mainBodyLeftButtons/feather/settings.svg);
           <string notr="true"/>
          </property>
          <property name="currentIndex">
-          <number>0</number>
+          <number>3</number>
          </property>
          <widget class="QWidget" name="homePage">
           <property name="styleSheet">
@@ -2522,6 +2522,55 @@ background-image: url(:/mainBodyLeftButtons/feather/settings.svg);
                     <property name="bottomMargin">
                      <number>0</number>
                     </property>
+                    <item>
+                     <widget class="QFrame" name="armingFrame">
+                      <property name="maximumSize">
+                       <size>
+                        <width>16777215</width>
+                        <height>30</height>
+                       </size>
+                      </property>
+                      <property name="frameShape">
+                       <enum>QFrame::Shape::StyledPanel</enum>
+                      </property>
+                      <property name="frameShadow">
+                       <enum>QFrame::Shadow::Raised</enum>
+                      </property>
+                      <layout class="QHBoxLayout" name="horizontalLayout_89">
+                       <property name="spacing">
+                        <number>0</number>
+                       </property>
+                       <property name="leftMargin">
+                        <number>0</number>
+                       </property>
+                       <property name="topMargin">
+                        <number>0</number>
+                       </property>
+                       <property name="rightMargin">
+                        <number>0</number>
+                       </property>
+                       <property name="bottomMargin">
+                        <number>0</number>
+                       </property>
+                       <item>
+                        <widget class="QLabel" name="armingLabel">
+                         <property name="font">
+                          <font>
+                           <pointsize>12</pointsize>
+                           <bold>true</bold>
+                          </font>
+                         </property>
+                         <property name="text">
+                          <string>Arming</string>
+                         </property>
+                         <property name="alignment">
+                          <set>Qt::AlignmentFlag::AlignCenter</set>
+                         </property>
+                        </widget>
+                       </item>
+                      </layout>
+                     </widget>
+                    </item>
                     <item>
                      <widget class="QFrame" name="ledFrame">
                       <property name="maximumSize">
@@ -5396,8 +5445,8 @@ QLineEdit:focus{
                     <property name="geometry">
                      <rect>
                       <x>0</x>
-                      <y>0</y>
-                      <width>363</width>
+                      <y>-1787</y>
+                      <width>1789</width>
                       <height>2768</height>
                      </rect>
                     </property>
@@ -5573,6 +5622,11 @@ QComboBox QListView::item::selected {
                              </item>
                              <item>
                               <property name="text">
+                               <string>Arming</string>
+                              </property>
+                             </item>
+                             <item>
+                              <property name="text">
                                <string>None</string>
                               </property>
                              </item>
@@ -5686,6 +5740,11 @@ QComboBox QListView::item::selected {
                              <item>
                               <property name="text">
                                <string>Stabilize</string>
+                              </property>
+                             </item>
+                             <item>
+                              <property name="text">
+                               <string>Arming</string>
                               </property>
                              </item>
                              <item>
@@ -5804,6 +5863,11 @@ QComboBox QListView::item::selected {
                              </item>
                              <item>
                               <property name="text">
+                               <string>Arming</string>
+                              </property>
+                             </item>
+                             <item>
+                              <property name="text">
                                <string>None</string>
                               </property>
                              </item>
@@ -5914,6 +5978,11 @@ QComboBox QListView::item::selected {
                              <item>
                               <property name="text">
                                <string>Stabilize</string>
+                              </property>
+                             </item>
+                             <item>
+                              <property name="text">
+                               <string>Arming</string>
                               </property>
                              </item>
                              <item>
@@ -6032,6 +6101,11 @@ QComboBox QListView::item::selected {
                              </item>
                              <item>
                               <property name="text">
+                               <string>Arming</string>
+                              </property>
+                             </item>
+                             <item>
+                              <property name="text">
                                <string>None</string>
                               </property>
                              </item>
@@ -6142,6 +6216,11 @@ QComboBox QListView::item::selected {
                              <item>
                               <property name="text">
                                <string>Stabilize</string>
+                              </property>
+                             </item>
+                             <item>
+                              <property name="text">
+                               <string>Arming</string>
                               </property>
                              </item>
                              <item>
@@ -6260,6 +6339,11 @@ QComboBox QListView::item::selected {
                              </item>
                              <item>
                               <property name="text">
+                               <string>Arming</string>
+                              </property>
+                             </item>
+                             <item>
+                              <property name="text">
                                <string>None</string>
                               </property>
                              </item>
@@ -6370,6 +6454,11 @@ QComboBox QListView::item::selected {
                              <item>
                               <property name="text">
                                <string>RightGripper</string>
+                              </property>
+                             </item>
+                             <item>
+                              <property name="text">
+                               <string>Arming</string>
                               </property>
                              </item>
                              <item>
@@ -6491,6 +6580,11 @@ QComboBox QListView::item::selected {
                              </item>
                              <item>
                               <property name="text">
+                               <string>Arming</string>
+                              </property>
+                             </item>
+                             <item>
+                              <property name="text">
                                <string>Stabilize</string>
                               </property>
                              </item>
@@ -6601,6 +6695,11 @@ QComboBox QListView::item::selected {
                              <item>
                               <property name="text">
                                <string>Stabilize</string>
+                              </property>
+                             </item>
+                             <item>
+                              <property name="text">
+                               <string>Arming</string>
                               </property>
                              </item>
                              <item>
@@ -6719,6 +6818,11 @@ QComboBox QListView::item::selected {
                              </item>
                              <item>
                               <property name="text">
+                               <string>Arming</string>
+                              </property>
+                             </item>
+                             <item>
+                              <property name="text">
                                <string>Stabilize</string>
                               </property>
                              </item>
@@ -6829,6 +6933,11 @@ QComboBox QListView::item::selected {
                              <item>
                               <property name="text">
                                <string>RightGripper</string>
+                              </property>
+                             </item>
+                             <item>
+                              <property name="text">
+                               <string>Arming</string>
                               </property>
                              </item>
                              <item>
@@ -6950,6 +7059,11 @@ QComboBox QListView::item::selected {
                                <string>Stabilize</string>
                               </property>
                              </item>
+                             <item>
+                              <property name="text">
+                               <string>Arming</string>
+                              </property>
+                             </item>
                             </widget>
                            </item>
                           </layout>
@@ -7064,6 +7178,11 @@ QComboBox QListView::item::selected {
                                <string>Stabilize</string>
                               </property>
                              </item>
+                             <item>
+                              <property name="text">
+                               <string>Arming</string>
+                              </property>
+                             </item>
                             </widget>
                            </item>
                           </layout>
@@ -7176,6 +7295,11 @@ QComboBox QListView::item::selected {
                              <item>
                               <property name="text">
                                <string>Stabilize</string>
+                              </property>
+                             </item>
+                             <item>
+                              <property name="text">
+                               <string>Arming</string>
                               </property>
                              </item>
                             </widget>

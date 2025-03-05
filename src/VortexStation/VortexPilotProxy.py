@@ -10,6 +10,7 @@ class VortexPilotProxy(VortexPilotingInterfaces):
             VortexPilotAction.LeftGripper: self.leftGripper,
             VortexPilotAction.Led: self.led,
             VortexPilotAction.FluidSuction: self.fluidSuction,
+            VortexPilotAction.Arming: self.arming,
             VortexPilotAction.FloatingDebris: self.floatingDebris,
             VortexPilotAction.Stabilize: self.stabilize,
             VortexPilotAction.AltitudeHold: self.altitudeHold,
@@ -26,6 +27,8 @@ class VortexPilotProxy(VortexPilotingInterfaces):
 
         # interfacing with vortex pilot
         self.vortexPilot = vortexPilot
+        
+        self.armed = False
         
         # interfacing with widgets
         self.indicatorsPainter = indicatorsPainter
@@ -96,6 +99,16 @@ class VortexPilotProxy(VortexPilotingInterfaces):
             self.indicatorsPainter(Indicators.FluidSuction)
         elif buttonEvent == "JOYBUTTONUP":
             self.indicatorsPainter(Indicators.FluidSuction, PAINT_BORDERS=False)
+            
+    def arming(self, buttonEvent: str):
+        self.vortexPilot.arming(buttonEvent=buttonEvent)
+        if buttonEvent == "JOYBUTTONDOWN":
+            if(self.armed):
+                self.indicatorsPainter(Indicators.Arming, PAINT_BORDERS=False)
+            else:
+                self.indicatorsPainter(Indicators.Arming)
+            self.armed = not self.armed
+        
 
     def cameraSwitch(self, buttonEvent: str):
         if self.cameraSwitchEvent == buttonEvent:

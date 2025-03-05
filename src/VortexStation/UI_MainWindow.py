@@ -1045,6 +1045,25 @@ class Ui_MainWindow(object):
         self.verticalLayout_4.setSpacing(0)
         self.verticalLayout_4.setObjectName(u"verticalLayout_4")
         self.verticalLayout_4.setContentsMargins(0, 0, 0, 0)
+        self.armingFrame = QFrame(self.indicatorsFrame)
+        self.armingFrame.setObjectName(u"armingFrame")
+        self.armingFrame.setMaximumSize(QSize(16777215, 30))
+        self.armingFrame.setFrameShape(QFrame.Shape.StyledPanel)
+        self.armingFrame.setFrameShadow(QFrame.Shadow.Raised)
+        self.horizontalLayout_89 = QHBoxLayout(self.armingFrame)
+        self.horizontalLayout_89.setSpacing(0)
+        self.horizontalLayout_89.setObjectName(u"horizontalLayout_89")
+        self.horizontalLayout_89.setContentsMargins(0, 0, 0, 0)
+        self.armingLabel = QLabel(self.armingFrame)
+        self.armingLabel.setObjectName(u"armingLabel")
+        self.armingLabel.setFont(font2)
+        self.armingLabel.setAlignment(Qt.AlignmentFlag.AlignCenter)
+
+        self.horizontalLayout_89.addWidget(self.armingLabel)
+
+
+        self.verticalLayout_4.addWidget(self.armingFrame)
+
         self.ledFrame = QFrame(self.indicatorsFrame)
         self.ledFrame.setObjectName(u"ledFrame")
         self.ledFrame.setMaximumSize(QSize(16777215, 30))
@@ -2309,7 +2328,7 @@ class Ui_MainWindow(object):
         self.controllerSettingsScrollArea.setWidgetResizable(True)
         self.scrollAreaWidgetContents = QWidget()
         self.scrollAreaWidgetContents.setObjectName(u"scrollAreaWidgetContents")
-        self.scrollAreaWidgetContents.setGeometry(QRect(0, 0, 363, 2768))
+        self.scrollAreaWidgetContents.setGeometry(QRect(0, -1787, 1789, 2768))
         self.horizontalLayout_20 = QHBoxLayout(self.scrollAreaWidgetContents)
         self.horizontalLayout_20.setSpacing(0)
         self.horizontalLayout_20.setObjectName(u"horizontalLayout_20")
@@ -2390,6 +2409,7 @@ class Ui_MainWindow(object):
         self.AButtonComboBox.addItem("")
         self.AButtonComboBox.addItem("")
         self.AButtonComboBox.addItem("")
+        self.AButtonComboBox.addItem("")
         self.AButtonComboBox.setObjectName(u"AButtonComboBox")
         self.AButtonComboBox.setMaximumSize(QSize(16777215, 50))
         self.AButtonComboBox.setFont(font4)
@@ -2421,6 +2441,7 @@ class Ui_MainWindow(object):
         self.horizontalLayout_22.addWidget(self.BButtonLabel)
 
         self.BButtonComboBox = QComboBox(self.BButtonFrame)
+        self.BButtonComboBox.addItem("")
         self.BButtonComboBox.addItem("")
         self.BButtonComboBox.addItem("")
         self.BButtonComboBox.addItem("")
@@ -2472,6 +2493,7 @@ class Ui_MainWindow(object):
         self.YButtonComboBox.addItem("")
         self.YButtonComboBox.addItem("")
         self.YButtonComboBox.addItem("")
+        self.YButtonComboBox.addItem("")
         self.YButtonComboBox.setObjectName(u"YButtonComboBox")
         self.YButtonComboBox.setMaximumSize(QSize(16777215, 50))
         self.YButtonComboBox.setFont(font4)
@@ -2502,6 +2524,7 @@ class Ui_MainWindow(object):
         self.horizontalLayout_31.addWidget(self.XButtonLabel)
 
         self.XButtonComboBox = QComboBox(self.XButtonFrame)
+        self.XButtonComboBox.addItem("")
         self.XButtonComboBox.addItem("")
         self.XButtonComboBox.addItem("")
         self.XButtonComboBox.addItem("")
@@ -2552,6 +2575,7 @@ class Ui_MainWindow(object):
         self.LBButtonComboBox.addItem("")
         self.LBButtonComboBox.addItem("")
         self.LBButtonComboBox.addItem("")
+        self.LBButtonComboBox.addItem("")
         self.LBButtonComboBox.setObjectName(u"LBButtonComboBox")
         self.LBButtonComboBox.setMaximumSize(QSize(16777215, 50))
         self.LBButtonComboBox.setFont(font4)
@@ -2582,6 +2606,7 @@ class Ui_MainWindow(object):
         self.horizontalLayout_38.addWidget(self.RBButtonLabel)
 
         self.RBButtonComboBox = QComboBox(self.RBButtonFrame)
+        self.RBButtonComboBox.addItem("")
         self.RBButtonComboBox.addItem("")
         self.RBButtonComboBox.addItem("")
         self.RBButtonComboBox.addItem("")
@@ -2632,6 +2657,7 @@ class Ui_MainWindow(object):
         self.STARTButtonComboBox.addItem("")
         self.STARTButtonComboBox.addItem("")
         self.STARTButtonComboBox.addItem("")
+        self.STARTButtonComboBox.addItem("")
         self.STARTButtonComboBox.setObjectName(u"STARTButtonComboBox")
         self.STARTButtonComboBox.setMaximumSize(QSize(16777215, 50))
         self.STARTButtonComboBox.setFont(font4)
@@ -2662,6 +2688,7 @@ class Ui_MainWindow(object):
         self.horizontalLayout_24.addWidget(self.BACKButtonLabel)
 
         self.BACKButtonComboBox = QComboBox(self.BACKButtonFrame)
+        self.BACKButtonComboBox.addItem("")
         self.BACKButtonComboBox.addItem("")
         self.BACKButtonComboBox.addItem("")
         self.BACKButtonComboBox.addItem("")
@@ -2713,6 +2740,7 @@ class Ui_MainWindow(object):
         self.RIGHTPADButtonComboBox.addItem("")
         self.RIGHTPADButtonComboBox.addItem("")
         self.RIGHTPADButtonComboBox.addItem("")
+        self.RIGHTPADButtonComboBox.addItem("")
         self.RIGHTPADButtonComboBox.setObjectName(u"RIGHTPADButtonComboBox")
         self.RIGHTPADButtonComboBox.setMaximumSize(QSize(16777215, 50))
         self.RIGHTPADButtonComboBox.setFont(font4)
@@ -2743,6 +2771,7 @@ class Ui_MainWindow(object):
         self.horizontalLayout_35.addWidget(self.LEFTPADButtonLabel)
 
         self.LEFTPADButtonComboBox = QComboBox(self.LEFTPADButtonFrame)
+        self.LEFTPADButtonComboBox.addItem("")
         self.LEFTPADButtonComboBox.addItem("")
         self.LEFTPADButtonComboBox.addItem("")
         self.LEFTPADButtonComboBox.addItem("")
@@ -2793,6 +2822,7 @@ class Ui_MainWindow(object):
         self.HOMEButtonComboBox.addItem("")
         self.HOMEButtonComboBox.addItem("")
         self.HOMEButtonComboBox.addItem("")
+        self.HOMEButtonComboBox.addItem("")
         self.HOMEButtonComboBox.setObjectName(u"HOMEButtonComboBox")
         self.HOMEButtonComboBox.setMaximumSize(QSize(16777215, 50))
         self.HOMEButtonComboBox.setFont(font4)
@@ -2823,6 +2853,7 @@ class Ui_MainWindow(object):
         self.horizontalLayout_25.addWidget(self.PADUPButtonLabel)
 
         self.PADUPButtonComboBox = QComboBox(self.PADUPButtonFrame)
+        self.PADUPButtonComboBox.addItem("")
         self.PADUPButtonComboBox.addItem("")
         self.PADUPButtonComboBox.addItem("")
         self.PADUPButtonComboBox.addItem("")
@@ -2873,6 +2904,7 @@ class Ui_MainWindow(object):
         self.PADDOWNButtonComboBox.addItem("")
         self.PADDOWNButtonComboBox.addItem("")
         self.PADDOWNButtonComboBox.addItem("")
+        self.PADDOWNButtonComboBox.addItem("")
         self.PADDOWNButtonComboBox.setObjectName(u"PADDOWNButtonComboBox")
         self.PADDOWNButtonComboBox.setMaximumSize(QSize(16777215, 50))
         self.PADDOWNButtonComboBox.setFont(font4)
@@ -2913,6 +2945,7 @@ class Ui_MainWindow(object):
         self.PADRIGHTButtonComboBox.addItem("")
         self.PADRIGHTButtonComboBox.addItem("")
         self.PADRIGHTButtonComboBox.addItem("")
+        self.PADRIGHTButtonComboBox.addItem("")
         self.PADRIGHTButtonComboBox.setObjectName(u"PADRIGHTButtonComboBox")
         self.PADRIGHTButtonComboBox.setMaximumSize(QSize(16777215, 50))
         self.PADRIGHTButtonComboBox.setFont(font4)
@@ -2943,6 +2976,7 @@ class Ui_MainWindow(object):
         self.horizontalLayout_26.addWidget(self.PADLEFTButtonLabel)
 
         self.PADLEFTButtonComboBox = QComboBox(self.PADLEFTButtonFrame)
+        self.PADLEFTButtonComboBox.addItem("")
         self.PADLEFTButtonComboBox.addItem("")
         self.PADLEFTButtonComboBox.addItem("")
         self.PADLEFTButtonComboBox.addItem("")
@@ -3287,7 +3321,7 @@ class Ui_MainWindow(object):
 
         self.retranslateUi(MainWindow)
 
-        self.mainBodyStackedWidget.setCurrentIndex(0)
+        self.mainBodyStackedWidget.setCurrentIndex(3)
         self.homePageStackedWidget.setCurrentIndex(0)
 
 
@@ -3323,6 +3357,7 @@ class Ui_MainWindow(object):
         self.fourThrustersLabel.setText("")
         self.upDownThrustersLabel.setText("")
         self.servoLabel.setText("")
+        self.armingLabel.setText(QCoreApplication.translate("MainWindow", u"Armed", None))
         self.ledLabel.setText(QCoreApplication.translate("MainWindow", u"Led", None))
         self.gripperLabel.setText(QCoreApplication.translate("MainWindow", u"RightGripper", None))
         self.leftGripperLabel.setText(QCoreApplication.translate("MainWindow", u"LeftGripper", None))
@@ -3462,7 +3497,8 @@ class Ui_MainWindow(object):
         self.AButtonComboBox.setItemText(6, QCoreApplication.translate("MainWindow", u"LeftGripper", None))
         self.AButtonComboBox.setItemText(7, QCoreApplication.translate("MainWindow", u"Gain", None))
         self.AButtonComboBox.setItemText(8, QCoreApplication.translate("MainWindow", u"Stabilize", None))
-        self.AButtonComboBox.setItemText(9, QCoreApplication.translate("MainWindow", u"None", None))
+        self.AButtonComboBox.setItemText(9, QCoreApplication.translate("MainWindow", u"Arming", None))
+        self.AButtonComboBox.setItemText(10, QCoreApplication.translate("MainWindow", u"None", None))
 
         self.BButtonLabel.setText("")
         self.BButtonComboBox.setItemText(0, QCoreApplication.translate("MainWindow", u"LeftGripper", None))
@@ -3474,7 +3510,8 @@ class Ui_MainWindow(object):
         self.BButtonComboBox.setItemText(6, QCoreApplication.translate("MainWindow", u"Gain", None))
         self.BButtonComboBox.setItemText(7, QCoreApplication.translate("MainWindow", u"RightGripper", None))
         self.BButtonComboBox.setItemText(8, QCoreApplication.translate("MainWindow", u"Stabilize", None))
-        self.BButtonComboBox.setItemText(9, QCoreApplication.translate("MainWindow", u"None", None))
+        self.BButtonComboBox.setItemText(9, QCoreApplication.translate("MainWindow", u"Arming", None))
+        self.BButtonComboBox.setItemText(10, QCoreApplication.translate("MainWindow", u"None", None))
 
         self.YButtonLabel.setText("")
         self.YButtonComboBox.setItemText(0, QCoreApplication.translate("MainWindow", u"FloatingDebris", None))
@@ -3486,7 +3523,8 @@ class Ui_MainWindow(object):
         self.YButtonComboBox.setItemText(6, QCoreApplication.translate("MainWindow", u"Gain", None))
         self.YButtonComboBox.setItemText(7, QCoreApplication.translate("MainWindow", u"RightGripper", None))
         self.YButtonComboBox.setItemText(8, QCoreApplication.translate("MainWindow", u"Stabilize", None))
-        self.YButtonComboBox.setItemText(9, QCoreApplication.translate("MainWindow", u"None", None))
+        self.YButtonComboBox.setItemText(9, QCoreApplication.translate("MainWindow", u"Arming", None))
+        self.YButtonComboBox.setItemText(10, QCoreApplication.translate("MainWindow", u"None", None))
 
         self.XButtonLabel.setText("")
         self.XButtonComboBox.setItemText(0, QCoreApplication.translate("MainWindow", u"Led", None))
@@ -3498,7 +3536,8 @@ class Ui_MainWindow(object):
         self.XButtonComboBox.setItemText(6, QCoreApplication.translate("MainWindow", u"Gain", None))
         self.XButtonComboBox.setItemText(7, QCoreApplication.translate("MainWindow", u"RightGripper", None))
         self.XButtonComboBox.setItemText(8, QCoreApplication.translate("MainWindow", u"Stabilize", None))
-        self.XButtonComboBox.setItemText(9, QCoreApplication.translate("MainWindow", u"None", None))
+        self.XButtonComboBox.setItemText(9, QCoreApplication.translate("MainWindow", u"Arming", None))
+        self.XButtonComboBox.setItemText(10, QCoreApplication.translate("MainWindow", u"None", None))
 
         self.LBButtonLabel.setText("")
         self.LBButtonComboBox.setItemText(0, QCoreApplication.translate("MainWindow", u"FluidSuction", None))
@@ -3510,7 +3549,8 @@ class Ui_MainWindow(object):
         self.LBButtonComboBox.setItemText(6, QCoreApplication.translate("MainWindow", u"Gain", None))
         self.LBButtonComboBox.setItemText(7, QCoreApplication.translate("MainWindow", u"RightGripper", None))
         self.LBButtonComboBox.setItemText(8, QCoreApplication.translate("MainWindow", u"Stabilize", None))
-        self.LBButtonComboBox.setItemText(9, QCoreApplication.translate("MainWindow", u"None", None))
+        self.LBButtonComboBox.setItemText(9, QCoreApplication.translate("MainWindow", u"Arming", None))
+        self.LBButtonComboBox.setItemText(10, QCoreApplication.translate("MainWindow", u"None", None))
 
         self.RBButtonLabel.setText("")
         self.RBButtonComboBox.setItemText(0, QCoreApplication.translate("MainWindow", u"AltitudeHold", None))
@@ -3522,7 +3562,8 @@ class Ui_MainWindow(object):
         self.RBButtonComboBox.setItemText(6, QCoreApplication.translate("MainWindow", u"Gain", None))
         self.RBButtonComboBox.setItemText(7, QCoreApplication.translate("MainWindow", u"RightGripper", None))
         self.RBButtonComboBox.setItemText(8, QCoreApplication.translate("MainWindow", u"Stabilize", None))
-        self.RBButtonComboBox.setItemText(9, QCoreApplication.translate("MainWindow", u"None", None))
+        self.RBButtonComboBox.setItemText(9, QCoreApplication.translate("MainWindow", u"Arming", None))
+        self.RBButtonComboBox.setItemText(10, QCoreApplication.translate("MainWindow", u"None", None))
 
         self.STARTButtonLabel.setText("")
         self.STARTButtonComboBox.setItemText(0, QCoreApplication.translate("MainWindow", u"Gain", None))
@@ -3534,7 +3575,8 @@ class Ui_MainWindow(object):
         self.STARTButtonComboBox.setItemText(6, QCoreApplication.translate("MainWindow", u"LeftGripper", None))
         self.STARTButtonComboBox.setItemText(7, QCoreApplication.translate("MainWindow", u"RightGripper", None))
         self.STARTButtonComboBox.setItemText(8, QCoreApplication.translate("MainWindow", u"Stabilize", None))
-        self.STARTButtonComboBox.setItemText(9, QCoreApplication.translate("MainWindow", u"None", None))
+        self.STARTButtonComboBox.setItemText(9, QCoreApplication.translate("MainWindow", u"Arming", None))
+        self.STARTButtonComboBox.setItemText(10, QCoreApplication.translate("MainWindow", u"None", None))
 
         self.BACKButtonLabel.setText("")
         self.BACKButtonComboBox.setItemText(0, QCoreApplication.translate("MainWindow", u"Stabilize", None))
@@ -3546,7 +3588,8 @@ class Ui_MainWindow(object):
         self.BACKButtonComboBox.setItemText(6, QCoreApplication.translate("MainWindow", u"LeftGripper", None))
         self.BACKButtonComboBox.setItemText(7, QCoreApplication.translate("MainWindow", u"Gain", None))
         self.BACKButtonComboBox.setItemText(8, QCoreApplication.translate("MainWindow", u"RightGripper", None))
-        self.BACKButtonComboBox.setItemText(9, QCoreApplication.translate("MainWindow", u"None", None))
+        self.BACKButtonComboBox.setItemText(9, QCoreApplication.translate("MainWindow", u"Arming", None))
+        self.BACKButtonComboBox.setItemText(10, QCoreApplication.translate("MainWindow", u"None", None))
 
         self.RIGHTPADButtonLabel.setText("")
         self.RIGHTPADButtonComboBox.setItemText(0, QCoreApplication.translate("MainWindow", u"None", None))
@@ -3558,7 +3601,8 @@ class Ui_MainWindow(object):
         self.RIGHTPADButtonComboBox.setItemText(6, QCoreApplication.translate("MainWindow", u"LeftGripper", None))
         self.RIGHTPADButtonComboBox.setItemText(7, QCoreApplication.translate("MainWindow", u"Gain", None))
         self.RIGHTPADButtonComboBox.setItemText(8, QCoreApplication.translate("MainWindow", u"RightGripper", None))
-        self.RIGHTPADButtonComboBox.setItemText(9, QCoreApplication.translate("MainWindow", u"Stabilize", None))
+        self.RIGHTPADButtonComboBox.setItemText(9, QCoreApplication.translate("MainWindow", u"Arming", None))
+        self.RIGHTPADButtonComboBox.setItemText(10, QCoreApplication.translate("MainWindow", u"Stabilize", None))
 
         self.LEFTPADButtonLabel.setText("")
         self.LEFTPADButtonComboBox.setItemText(0, QCoreApplication.translate("MainWindow", u"CameraSwitch", None))
@@ -3570,7 +3614,8 @@ class Ui_MainWindow(object):
         self.LEFTPADButtonComboBox.setItemText(6, QCoreApplication.translate("MainWindow", u"Gain", None))
         self.LEFTPADButtonComboBox.setItemText(7, QCoreApplication.translate("MainWindow", u"RightGripper", None))
         self.LEFTPADButtonComboBox.setItemText(8, QCoreApplication.translate("MainWindow", u"Stabilize", None))
-        self.LEFTPADButtonComboBox.setItemText(9, QCoreApplication.translate("MainWindow", u"None", None))
+        self.LEFTPADButtonComboBox.setItemText(9, QCoreApplication.translate("MainWindow", u"Arming", None))
+        self.LEFTPADButtonComboBox.setItemText(10, QCoreApplication.translate("MainWindow", u"None", None))
 
         self.HOMEButtonLabel.setText("")
         self.HOMEButtonComboBox.setItemText(0, QCoreApplication.translate("MainWindow", u"None", None))
@@ -3582,7 +3627,8 @@ class Ui_MainWindow(object):
         self.HOMEButtonComboBox.setItemText(6, QCoreApplication.translate("MainWindow", u"LeftGripper", None))
         self.HOMEButtonComboBox.setItemText(7, QCoreApplication.translate("MainWindow", u"Gain", None))
         self.HOMEButtonComboBox.setItemText(8, QCoreApplication.translate("MainWindow", u"RightGripper", None))
-        self.HOMEButtonComboBox.setItemText(9, QCoreApplication.translate("MainWindow", u"Stabilize", None))
+        self.HOMEButtonComboBox.setItemText(9, QCoreApplication.translate("MainWindow", u"Arming", None))
+        self.HOMEButtonComboBox.setItemText(10, QCoreApplication.translate("MainWindow", u"Stabilize", None))
 
         self.PADUPButtonLabel.setText("")
         self.PADUPButtonComboBox.setItemText(0, QCoreApplication.translate("MainWindow", u"None", None))
@@ -3594,7 +3640,8 @@ class Ui_MainWindow(object):
         self.PADUPButtonComboBox.setItemText(6, QCoreApplication.translate("MainWindow", u"LeftGripper", None))
         self.PADUPButtonComboBox.setItemText(7, QCoreApplication.translate("MainWindow", u"Gain", None))
         self.PADUPButtonComboBox.setItemText(8, QCoreApplication.translate("MainWindow", u"RightGripper", None))
-        self.PADUPButtonComboBox.setItemText(9, QCoreApplication.translate("MainWindow", u"Stabilize", None))
+        self.PADUPButtonComboBox.setItemText(9, QCoreApplication.translate("MainWindow", u"Arming", None))
+        self.PADUPButtonComboBox.setItemText(10, QCoreApplication.translate("MainWindow", u"Stabilize", None))
 
         self.PADDOWNButtonLabel.setText("")
         self.PADDOWNButtonComboBox.setItemText(0, QCoreApplication.translate("MainWindow", u"None", None))
@@ -3607,6 +3654,7 @@ class Ui_MainWindow(object):
         self.PADDOWNButtonComboBox.setItemText(7, QCoreApplication.translate("MainWindow", u"Gain", None))
         self.PADDOWNButtonComboBox.setItemText(8, QCoreApplication.translate("MainWindow", u"RightGripper", None))
         self.PADDOWNButtonComboBox.setItemText(9, QCoreApplication.translate("MainWindow", u"Stabilize", None))
+        self.PADDOWNButtonComboBox.setItemText(10, QCoreApplication.translate("MainWindow", u"Arming", None))
 
         self.PADRIGHTButtonLabel.setText("")
         self.PADRIGHTButtonComboBox.setItemText(0, QCoreApplication.translate("MainWindow", u"None", None))
@@ -3619,6 +3667,7 @@ class Ui_MainWindow(object):
         self.PADRIGHTButtonComboBox.setItemText(7, QCoreApplication.translate("MainWindow", u"Gain", None))
         self.PADRIGHTButtonComboBox.setItemText(8, QCoreApplication.translate("MainWindow", u"RightGripper", None))
         self.PADRIGHTButtonComboBox.setItemText(9, QCoreApplication.translate("MainWindow", u"Stabilize", None))
+        self.PADRIGHTButtonComboBox.setItemText(10, QCoreApplication.translate("MainWindow", u"Arming", None))
 
         self.PADLEFTButtonLabel.setText("")
         self.PADLEFTButtonComboBox.setItemText(0, QCoreApplication.translate("MainWindow", u"None", None))
@@ -3631,6 +3680,7 @@ class Ui_MainWindow(object):
         self.PADLEFTButtonComboBox.setItemText(7, QCoreApplication.translate("MainWindow", u"Gain", None))
         self.PADLEFTButtonComboBox.setItemText(8, QCoreApplication.translate("MainWindow", u"RightGripper", None))
         self.PADLEFTButtonComboBox.setItemText(9, QCoreApplication.translate("MainWindow", u"Stabilize", None))
+        self.PADLEFTButtonComboBox.setItemText(10, QCoreApplication.translate("MainWindow", u"Arming", None))
 
         self.RIGHTVERTICALAXISLabel.setText("")
         self.RIGHTVERTICALAXISComboBox.setItemText(0, QCoreApplication.translate("MainWindow", u"Surge", None))

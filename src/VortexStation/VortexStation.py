@@ -53,11 +53,6 @@ class VortexMainWindow(QMainWindow, Ui_MainWindow):
         self.compassLayout.setContentsMargins(0, 0, 0, 0)
         self.compassLayout.addWidget(self.compass)
         
-        # Add compass widget to CompassFrame_2 (secondary page)
-        self.compass2 = CompassWidget(self.CompassFrame_2)
-        self.compassLayout2 = QVBoxLayout(self.CompassFrame_2)
-        self.compassLayout2.setContentsMargins(0, 0, 0, 0)
-        self.compassLayout2.addWidget(self.compass2)
         
         # Add artificial horizon widget to artificialHorizonFrame
         self.artificialHorizon = ArtificialHorizonWidget(self.artificialHorizonFrame)
@@ -88,7 +83,8 @@ class VortexMainWindow(QMainWindow, Ui_MainWindow):
             Indicators.FluidSuction: self.fluidSuctionFrame,
             Indicators.FloatingDebris: self.floatingDebrisFrame,
             Indicators.AltitudeHold: self.altitudeHoldFrame,
-            Indicators.Stabalize: self.stabilizeFrame
+            Indicators.Stabalize: self.stabilizeFrame,
+            Indicators.Arming: self.armingFrame,
         }
 
         # Dictionary for readings labels
@@ -434,6 +430,7 @@ class VortexMainWindow(QMainWindow, Ui_MainWindow):
             "Surge": VortexPilotAction.Surge,
             "Sway": VortexPilotAction.Sway,
             "Yaw": VortexPilotAction.Yaw,
+            "Arming": VortexPilotAction.Arming,
             "None": ""
         }
 
@@ -504,6 +501,7 @@ class VortexMainWindow(QMainWindow, Ui_MainWindow):
             "Surge": VortexPilotAction.Surge,
             "Sway": VortexPilotAction.Sway,
             "Yaw": VortexPilotAction.Yaw,
+            "Arming": VortexPilotAction.Arming,
             "None": ""
         }
 
@@ -588,8 +586,8 @@ class VortexMainWindow(QMainWindow, Ui_MainWindow):
             newButtonsActionMapping[JoystickButtons.HOME.value] = settingsActionMapping[self.settingsINI.value("HOME")]
             self.HOMEButtonComboBox.setCurrentText(self.settingsINI.value("HOME"))
         else:
-            newButtonsActionMapping[JoystickButtons.HOME.value] = ""
-            self.HOMEButtonComboBox.setCurrentText("None")
+            newButtonsActionMapping[JoystickButtons.HOME.value] = VortexPilotAction.Arming
+            self.HOMEButtonComboBox.setCurrentText("Arming")
 
         # loading joystick axes mapping from INI file.
         if self.settingsINI.contains("RIGHTHORIZONTALAXIS"):

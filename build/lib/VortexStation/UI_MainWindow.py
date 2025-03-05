@@ -1045,6 +1045,25 @@ class Ui_MainWindow(object):
         self.verticalLayout_4.setSpacing(0)
         self.verticalLayout_4.setObjectName(u"verticalLayout_4")
         self.verticalLayout_4.setContentsMargins(0, 0, 0, 0)
+        self.armingFrame = QFrame(self.indicatorsFrame)
+        self.armingFrame.setObjectName(u"armingFrame")
+        self.armingFrame.setMaximumSize(QSize(16777215, 30))
+        self.armingFrame.setFrameShape(QFrame.Shape.StyledPanel)
+        self.armingFrame.setFrameShadow(QFrame.Shadow.Raised)
+        self.horizontalLayout_89 = QHBoxLayout(self.armingFrame)
+        self.horizontalLayout_89.setSpacing(0)
+        self.horizontalLayout_89.setObjectName(u"horizontalLayout_89")
+        self.horizontalLayout_89.setContentsMargins(0, 0, 0, 0)
+        self.armingLabel = QLabel(self.armingFrame)
+        self.armingLabel.setObjectName(u"armingLabel")
+        self.armingLabel.setFont(font2)
+        self.armingLabel.setAlignment(Qt.AlignmentFlag.AlignCenter)
+
+        self.horizontalLayout_89.addWidget(self.armingLabel)
+
+
+        self.verticalLayout_4.addWidget(self.armingFrame)
+
         self.ledFrame = QFrame(self.indicatorsFrame)
         self.ledFrame.setObjectName(u"ledFrame")
         self.ledFrame.setMaximumSize(QSize(16777215, 30))
@@ -3323,6 +3342,7 @@ class Ui_MainWindow(object):
         self.fourThrustersLabel.setText("")
         self.upDownThrustersLabel.setText("")
         self.servoLabel.setText("")
+        self.armingLabel.setText(QCoreApplication.translate("MainWindow", u"Arming", None))
         self.ledLabel.setText(QCoreApplication.translate("MainWindow", u"Led", None))
         self.gripperLabel.setText(QCoreApplication.translate("MainWindow", u"RightGripper", None))
         self.leftGripperLabel.setText(QCoreApplication.translate("MainWindow", u"LeftGripper", None))

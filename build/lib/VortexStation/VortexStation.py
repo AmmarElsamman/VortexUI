@@ -88,7 +88,8 @@ class VortexMainWindow(QMainWindow, Ui_MainWindow):
             Indicators.FluidSuction: self.fluidSuctionFrame,
             Indicators.FloatingDebris: self.floatingDebrisFrame,
             Indicators.AltitudeHold: self.altitudeHoldFrame,
-            Indicators.Stabalize: self.stabilizeFrame
+            Indicators.Stabalize: self.stabilizeFrame,
+            Indicators.Arming: self.armingFrame,
         }
 
         # Dictionary for readings labels

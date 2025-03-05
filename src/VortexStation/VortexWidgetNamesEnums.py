@@ -28,6 +28,7 @@ class Indicators(Enum):
     FloatingDebris = 5
     AltitudeHold = 6
     Stabalize = 7
+    Arming = 8
 
 class VortexPilotAction(Enum):
     Led = 1
@@ -46,6 +47,7 @@ class VortexPilotAction(Enum):
     Surge = 14
     Sway = 15
     Yaw = 17
+    Arming = 18
 
 class JoystickButtons(Enum):
     A = 0 

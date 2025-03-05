@@ -45,6 +45,12 @@ class VortexPilot(VortexPilotingInterfaces):
             print("fluidSuction:ON")
         elif(buttonEvent=="JOYBUTTONUP"):
             print("fluidSuction:OFF")
+    
+    def arming(self, buttonEvent: str):
+        if(buttonEvent=="JOYBUTTONDOWN"):
+            print("Arming:ON")
+        elif(buttonEvent=="JOYBUTTONUP"):
+            print("Arming:OFF")
 
     def sampleTool(self, buttonEvent: str):
         pass

@@ -28,6 +28,7 @@ class Indicators(Enum):
     FloatingDebris = 5
     AltitudeHold = 6
     Stabalize = 7
+    Arming = 8
 
 class VortexPilotAction(Enum):
     Led = 1

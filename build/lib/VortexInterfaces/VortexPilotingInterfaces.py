@@ -22,6 +22,10 @@ class VortexPilotingInterfaces(ABC):
         pass
     
     @abstractmethod 
+    def arming(self, buttonEvent: str):
+        pass
+    
+    @abstractmethod 
     def sampleTool(self, buttonEvent: str):
         pass
 
