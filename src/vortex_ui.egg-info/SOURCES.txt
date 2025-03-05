@@ -15,9 +15,13 @@ src/VortexInterfaces/CompanionControllerInterface.py
 src/VortexInterfaces/CompanionControllerInterfaces.py
 src/VortexInterfaces/ControllerInterfaces.py
 src/VortexInterfaces/OAKVidgearClientInterfaces.py
+src/VortexInterfaces/OcrTaskInterface.py
 src/VortexInterfaces/VortexPilotingInterfaces.py
 src/VortexInterfaces/__init__.py
 src/VortexInterfaces/__main__.py
+src/VortexOcr/VortexOcr.py
+src/VortexOcr/__init__.py
+src/VortexOcr/__main__.py
 src/VortexPilot/VortexPilot.py
 src/VortexPilot/__init__.py
 src/VortexPilot/__main__.py

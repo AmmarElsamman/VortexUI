@@ -18,7 +18,7 @@ from PyQt5.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
 from PyQt5.QtWidgets import (QApplication, QComboBox, QFrame, QHBoxLayout,
     QLabel, QLineEdit, QMainWindow, QPushButton,
     QScrollArea, QSizePolicy, QSpacerItem, QStackedWidget,
-    QVBoxLayout, QWidget)
+    QTextEdit, QVBoxLayout, QWidget)
 from VortexStation import resources_rc
 
 class Ui_MainWindow(object):
@@ -208,6 +208,19 @@ class Ui_MainWindow(object):
 "} ")
 
         self.verticalLayout_2.addWidget(self.cameraButton)
+
+        self.ocrButton = QPushButton(self.mainBodyLeftButtonsFrame)
+        self.ocrButton.setObjectName(u"ocrButton")
+        self.ocrButton.setFont(font1)
+        self.ocrButton.setStyleSheet(u"QPushButton{ \n"
+"	background-image: url(:/mainBodyLeftButtons/feather/file-text.svg);\n"
+"}\n"
+"\n"
+"QPushButton{border-left: 3px solid #FFB86C;}\n"
+"\n"
+"")
+
+        self.verticalLayout_2.addWidget(self.ocrButton)
 
         self.verticalSpacer = QSpacerItem(20, 403, QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Expanding)
 
@@ -1401,6 +1414,68 @@ class Ui_MainWindow(object):
         self.horizontalLayout_9.addWidget(self.homePageFrame)
 
         self.mainBodyStackedWidget.addWidget(self.homePage)
+        self.ocrPage = QWidget()
+        self.ocrPage.setObjectName(u"ocrPage")
+        self.verticalLayout_24 = QVBoxLayout(self.ocrPage)
+        self.verticalLayout_24.setSpacing(0)
+        self.verticalLayout_24.setObjectName(u"verticalLayout_24")
+        self.verticalLayout_24.setContentsMargins(0, 0, 0, 0)
+        self.mainOCRFrame = QFrame(self.ocrPage)
+        self.mainOCRFrame.setObjectName(u"mainOCRFrame")
+        self.mainOCRFrame.setFrameShape(QFrame.Shape.StyledPanel)
+        self.mainOCRFrame.setFrameShadow(QFrame.Shadow.Raised)
+        self.verticalLayout_25 = QVBoxLayout(self.mainOCRFrame)
+        self.verticalLayout_25.setSpacing(0)
+        self.verticalLayout_25.setObjectName(u"verticalLayout_25")
+        self.verticalLayout_25.setContentsMargins(0, 0, 0, 0)
+        self.ocrResults = QLabel(self.mainOCRFrame)
+        self.ocrResults.setObjectName(u"ocrResults")
+        self.ocrResults.setMinimumSize(QSize(0, 100))
+        self.ocrResults.setMaximumSize(QSize(16777215, 100))
+        self.ocrResults.setFont(font2)
+        self.ocrResults.setAlignment(Qt.AlignmentFlag.AlignLeading|Qt.AlignmentFlag.AlignLeft|Qt.AlignmentFlag.AlignVCenter)
+
+        self.verticalLayout_25.addWidget(self.ocrResults)
+
+        self.ocrTextbox = QTextEdit(self.mainOCRFrame)
+        self.ocrTextbox.setObjectName(u"ocrTextbox")
+        self.ocrTextbox.setMinimumSize(QSize(0, 200))
+        self.ocrTextbox.setMaximumSize(QSize(16777215, 200))
+        font4 = QFont()
+        font4.setPointSize(16)
+        self.ocrTextbox.setFont(font4)
+        self.ocrTextbox.setStyleSheet(u"background-color: rgb(248, 248, 242);")
+
+        self.verticalLayout_25.addWidget(self.ocrTextbox)
+
+        self.verticalSpacer_3 = QSpacerItem(20, 40, QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Expanding)
+
+        self.verticalLayout_25.addItem(self.verticalSpacer_3)
+
+
+        self.verticalLayout_24.addWidget(self.mainOCRFrame)
+
+        self.textSubmitFrame = QFrame(self.ocrPage)
+        self.textSubmitFrame.setObjectName(u"textSubmitFrame")
+        self.textSubmitFrame.setMinimumSize(QSize(0, 100))
+        self.textSubmitFrame.setMaximumSize(QSize(16777215, 100))
+        self.textSubmitFrame.setFrameShape(QFrame.Shape.StyledPanel)
+        self.textSubmitFrame.setFrameShadow(QFrame.Shadow.Raised)
+        self.verticalLayout_26 = QVBoxLayout(self.textSubmitFrame)
+        self.verticalLayout_26.setSpacing(0)
+        self.verticalLayout_26.setObjectName(u"verticalLayout_26")
+        self.verticalLayout_26.setContentsMargins(0, 0, 0, 0)
+        self.ocrTextSubmitButton = QPushButton(self.textSubmitFrame)
+        self.ocrTextSubmitButton.setObjectName(u"ocrTextSubmitButton")
+        self.ocrTextSubmitButton.setMinimumSize(QSize(0, 100))
+        self.ocrTextSubmitButton.setMaximumSize(QSize(16777215, 100))
+
+        self.verticalLayout_26.addWidget(self.ocrTextSubmitButton)
+
+
+        self.verticalLayout_24.addWidget(self.textSubmitFrame)
+
+        self.mainBodyStackedWidget.addWidget(self.ocrPage)
         self.cameraSettingsPage = QWidget()
         self.cameraSettingsPage.setObjectName(u"cameraSettingsPage")
         self.cameraSettingsPage.setStyleSheet(u"")
@@ -1433,7 +1508,7 @@ class Ui_MainWindow(object):
         self.cameraSettingsScrollArea.setWidgetResizable(True)
         self.scrollAreaWidgetContents_2 = QWidget()
         self.scrollAreaWidgetContents_2.setObjectName(u"scrollAreaWidgetContents_2")
-        self.scrollAreaWidgetContents_2.setGeometry(QRect(0, 0, 516, 1258))
+        self.scrollAreaWidgetContents_2.setGeometry(QRect(0, 0, 1789, 1258))
         self.horizontalLayout_77 = QHBoxLayout(self.scrollAreaWidgetContents_2)
         self.horizontalLayout_77.setSpacing(0)
         self.horizontalLayout_77.setObjectName(u"horizontalLayout_77")
@@ -1493,10 +1568,10 @@ class Ui_MainWindow(object):
         self.OAKCameraLocationLabel = QLabel(self.OAKCameraLocationFrame)
         self.OAKCameraLocationLabel.setObjectName(u"OAKCameraLocationLabel")
         self.OAKCameraLocationLabel.setMaximumSize(QSize(400, 100))
-        font4 = QFont()
-        font4.setPointSize(16)
-        font4.setBold(True)
-        self.OAKCameraLocationLabel.setFont(font4)
+        font5 = QFont()
+        font5.setPointSize(16)
+        font5.setBold(True)
+        self.OAKCameraLocationLabel.setFont(font5)
 
         self.horizontalLayout_80.addWidget(self.OAKCameraLocationLabel)
 
@@ -1511,7 +1586,7 @@ class Ui_MainWindow(object):
         self.OAKCameraLocationComboBox.addItem("")
         self.OAKCameraLocationComboBox.setObjectName(u"OAKCameraLocationComboBox")
         self.OAKCameraLocationComboBox.setMaximumSize(QSize(16777215, 50))
-        self.OAKCameraLocationComboBox.setFont(font4)
+        self.OAKCameraLocationComboBox.setFont(font5)
         self.OAKCameraLocationComboBox.setStyleSheet(u"")
         self.OAKCameraLocationComboBox.setEditable(False)
 
@@ -1533,7 +1608,7 @@ class Ui_MainWindow(object):
         self.RTSPCAMERA1LocationLabel = QLabel(self.RTSPCAMERA1LocationFrame)
         self.RTSPCAMERA1LocationLabel.setObjectName(u"RTSPCAMERA1LocationLabel")
         self.RTSPCAMERA1LocationLabel.setMaximumSize(QSize(400, 100))
-        self.RTSPCAMERA1LocationLabel.setFont(font4)
+        self.RTSPCAMERA1LocationLabel.setFont(font5)
 
         self.horizontalLayout_78.addWidget(self.RTSPCAMERA1LocationLabel)
 
@@ -1548,7 +1623,7 @@ class Ui_MainWindow(object):
         self.RTSPCAMERA1LocationComboBox.addItem("")
         self.RTSPCAMERA1LocationComboBox.setObjectName(u"RTSPCAMERA1LocationComboBox")
         self.RTSPCAMERA1LocationComboBox.setMaximumSize(QSize(16777215, 50))
-        self.RTSPCAMERA1LocationComboBox.setFont(font4)
+        self.RTSPCAMERA1LocationComboBox.setFont(font5)
         self.RTSPCAMERA1LocationComboBox.setStyleSheet(u"")
         self.RTSPCAMERA1LocationComboBox.setEditable(False)
 
@@ -1570,7 +1645,7 @@ class Ui_MainWindow(object):
         self.RTSPCAMERA2LocationLabel = QLabel(self.RTSPCAMERA2LocationFrame)
         self.RTSPCAMERA2LocationLabel.setObjectName(u"RTSPCAMERA2LocationLabel")
         self.RTSPCAMERA2LocationLabel.setMaximumSize(QSize(400, 100))
-        self.RTSPCAMERA2LocationLabel.setFont(font4)
+        self.RTSPCAMERA2LocationLabel.setFont(font5)
 
         self.horizontalLayout_93.addWidget(self.RTSPCAMERA2LocationLabel)
 
@@ -1585,7 +1660,7 @@ class Ui_MainWindow(object):
         self.RTSPCAMERA2LocationComboBox.addItem("")
         self.RTSPCAMERA2LocationComboBox.setObjectName(u"RTSPCAMERA2LocationComboBox")
         self.RTSPCAMERA2LocationComboBox.setMaximumSize(QSize(16777215, 50))
-        self.RTSPCAMERA2LocationComboBox.setFont(font4)
+        self.RTSPCAMERA2LocationComboBox.setFont(font5)
         self.RTSPCAMERA2LocationComboBox.setStyleSheet(u"")
         self.RTSPCAMERA2LocationComboBox.setEditable(False)
 
@@ -1607,7 +1682,7 @@ class Ui_MainWindow(object):
         self.RTSPCAMERA3LocationLabel = QLabel(self.RTSPCAMERA3LocationFrame)
         self.RTSPCAMERA3LocationLabel.setObjectName(u"RTSPCAMERA3LocationLabel")
         self.RTSPCAMERA3LocationLabel.setMaximumSize(QSize(400, 100))
-        self.RTSPCAMERA3LocationLabel.setFont(font4)
+        self.RTSPCAMERA3LocationLabel.setFont(font5)
 
         self.horizontalLayout_95.addWidget(self.RTSPCAMERA3LocationLabel)
 
@@ -1622,7 +1697,7 @@ class Ui_MainWindow(object):
         self.RTSPCAMERA3LocationComboBox.addItem("")
         self.RTSPCAMERA3LocationComboBox.setObjectName(u"RTSPCAMERA3LocationComboBox")
         self.RTSPCAMERA3LocationComboBox.setMaximumSize(QSize(16777215, 50))
-        self.RTSPCAMERA3LocationComboBox.setFont(font4)
+        self.RTSPCAMERA3LocationComboBox.setFont(font5)
         self.RTSPCAMERA3LocationComboBox.setStyleSheet(u"")
         self.RTSPCAMERA3LocationComboBox.setEditable(False)
 
@@ -1644,7 +1719,7 @@ class Ui_MainWindow(object):
         self.RTSPCAMERA4LocationLabel = QLabel(self.RTSPCAMERA4LocationFrame)
         self.RTSPCAMERA4LocationLabel.setObjectName(u"RTSPCAMERA4LocationLabel")
         self.RTSPCAMERA4LocationLabel.setMaximumSize(QSize(400, 100))
-        self.RTSPCAMERA4LocationLabel.setFont(font4)
+        self.RTSPCAMERA4LocationLabel.setFont(font5)
 
         self.horizontalLayout_83.addWidget(self.RTSPCAMERA4LocationLabel)
 
@@ -1659,7 +1734,7 @@ class Ui_MainWindow(object):
         self.RTSPCAMERA4LocationComboBox.addItem("")
         self.RTSPCAMERA4LocationComboBox.setObjectName(u"RTSPCAMERA4LocationComboBox")
         self.RTSPCAMERA4LocationComboBox.setMaximumSize(QSize(16777215, 50))
-        self.RTSPCAMERA4LocationComboBox.setFont(font4)
+        self.RTSPCAMERA4LocationComboBox.setFont(font5)
         self.RTSPCAMERA4LocationComboBox.setStyleSheet(u"")
         self.RTSPCAMERA4LocationComboBox.setEditable(False)
 
@@ -1681,7 +1756,7 @@ class Ui_MainWindow(object):
         self.RTSPCAMERA5LocationLabel = QLabel(self.RTSPCAMERA5LocationFrame)
         self.RTSPCAMERA5LocationLabel.setObjectName(u"RTSPCAMERA5LocationLabel")
         self.RTSPCAMERA5LocationLabel.setMaximumSize(QSize(400, 100))
-        self.RTSPCAMERA5LocationLabel.setFont(font4)
+        self.RTSPCAMERA5LocationLabel.setFont(font5)
 
         self.horizontalLayout_97.addWidget(self.RTSPCAMERA5LocationLabel)
 
@@ -1696,7 +1771,7 @@ class Ui_MainWindow(object):
         self.RTSPCAMERA5LocationComboBox.addItem("")
         self.RTSPCAMERA5LocationComboBox.setObjectName(u"RTSPCAMERA5LocationComboBox")
         self.RTSPCAMERA5LocationComboBox.setMaximumSize(QSize(16777215, 50))
-        self.RTSPCAMERA5LocationComboBox.setFont(font4)
+        self.RTSPCAMERA5LocationComboBox.setFont(font5)
         self.RTSPCAMERA5LocationComboBox.setStyleSheet(u"")
         self.RTSPCAMERA5LocationComboBox.setEditable(False)
 
@@ -1718,7 +1793,7 @@ class Ui_MainWindow(object):
         self.RTSPCAMERA6LocationLabel = QLabel(self.RTSPCAMERA6LocationFrame)
         self.RTSPCAMERA6LocationLabel.setObjectName(u"RTSPCAMERA6LocationLabel")
         self.RTSPCAMERA6LocationLabel.setMaximumSize(QSize(400, 100))
-        self.RTSPCAMERA6LocationLabel.setFont(font4)
+        self.RTSPCAMERA6LocationLabel.setFont(font5)
 
         self.horizontalLayout_91.addWidget(self.RTSPCAMERA6LocationLabel)
 
@@ -1733,7 +1808,7 @@ class Ui_MainWindow(object):
         self.RTSPCAMERA6LocationComboBox.addItem("")
         self.RTSPCAMERA6LocationComboBox.setObjectName(u"RTSPCAMERA6LocationComboBox")
         self.RTSPCAMERA6LocationComboBox.setMaximumSize(QSize(16777215, 50))
-        self.RTSPCAMERA6LocationComboBox.setFont(font4)
+        self.RTSPCAMERA6LocationComboBox.setFont(font5)
         self.RTSPCAMERA6LocationComboBox.setStyleSheet(u"")
         self.RTSPCAMERA6LocationComboBox.setEditable(False)
 
@@ -1755,7 +1830,7 @@ class Ui_MainWindow(object):
         self.RTSPCAMERA7LocationLabel = QLabel(self.RTSPCAMERA7LocationFrame)
         self.RTSPCAMERA7LocationLabel.setObjectName(u"RTSPCAMERA7LocationLabel")
         self.RTSPCAMERA7LocationLabel.setMaximumSize(QSize(400, 100))
-        self.RTSPCAMERA7LocationLabel.setFont(font4)
+        self.RTSPCAMERA7LocationLabel.setFont(font5)
 
         self.horizontalLayout_85.addWidget(self.RTSPCAMERA7LocationLabel)
 
@@ -1770,7 +1845,7 @@ class Ui_MainWindow(object):
         self.RTSPCAMERA7LocationComboBox.addItem("")
         self.RTSPCAMERA7LocationComboBox.setObjectName(u"RTSPCAMERA7LocationComboBox")
         self.RTSPCAMERA7LocationComboBox.setMaximumSize(QSize(16777215, 50))
-        self.RTSPCAMERA7LocationComboBox.setFont(font4)
+        self.RTSPCAMERA7LocationComboBox.setFont(font5)
         self.RTSPCAMERA7LocationComboBox.setStyleSheet(u"")
         self.RTSPCAMERA7LocationComboBox.setEditable(False)
 
@@ -1792,7 +1867,7 @@ class Ui_MainWindow(object):
         self.RTSPCAMERA8LocationLabel = QLabel(self.RTSPCAMERA8LocationFrame)
         self.RTSPCAMERA8LocationLabel.setObjectName(u"RTSPCAMERA8LocationLabel")
         self.RTSPCAMERA8LocationLabel.setMaximumSize(QSize(400, 100))
-        self.RTSPCAMERA8LocationLabel.setFont(font4)
+        self.RTSPCAMERA8LocationLabel.setFont(font5)
 
         self.horizontalLayout_87.addWidget(self.RTSPCAMERA8LocationLabel)
 
@@ -1807,7 +1882,7 @@ class Ui_MainWindow(object):
         self.RTSPCAMERA8LocationComboBox.addItem("")
         self.RTSPCAMERA8LocationComboBox.setObjectName(u"RTSPCAMERA8LocationComboBox")
         self.RTSPCAMERA8LocationComboBox.setMaximumSize(QSize(16777215, 50))
-        self.RTSPCAMERA8LocationComboBox.setFont(font4)
+        self.RTSPCAMERA8LocationComboBox.setFont(font5)
         self.RTSPCAMERA8LocationComboBox.setStyleSheet(u"")
         self.RTSPCAMERA8LocationComboBox.setEditable(False)
 
@@ -1829,14 +1904,14 @@ class Ui_MainWindow(object):
         self.RTSPCAMERA1SourceLabel = QLabel(self.RTSPCAMERA1SourceFrame)
         self.RTSPCAMERA1SourceLabel.setObjectName(u"RTSPCAMERA1SourceLabel")
         self.RTSPCAMERA1SourceLabel.setMaximumSize(QSize(400, 100))
-        self.RTSPCAMERA1SourceLabel.setFont(font4)
+        self.RTSPCAMERA1SourceLabel.setFont(font5)
 
         self.horizontalLayout_79.addWidget(self.RTSPCAMERA1SourceLabel)
 
         self.lineEditRTSPCAMERA1SourceText = QLineEdit(self.RTSPCAMERA1SourceFrame)
         self.lineEditRTSPCAMERA1SourceText.setObjectName(u"lineEditRTSPCAMERA1SourceText")
         self.lineEditRTSPCAMERA1SourceText.setMaximumSize(QSize(16777215, 50))
-        self.lineEditRTSPCAMERA1SourceText.setFont(font4)
+        self.lineEditRTSPCAMERA1SourceText.setFont(font5)
         self.lineEditRTSPCAMERA1SourceText.setStyleSheet(u"QLineEdit{\n"
 "	border-radius: 5px; \n"
 "	border: 2px solid #F1FA8C;\n"
@@ -1873,14 +1948,14 @@ class Ui_MainWindow(object):
         self.RTSPCAMERA2SourceLabel = QLabel(self.RTSPCAMERA2SourceFrame)
         self.RTSPCAMERA2SourceLabel.setObjectName(u"RTSPCAMERA2SourceLabel")
         self.RTSPCAMERA2SourceLabel.setMaximumSize(QSize(400, 100))
-        self.RTSPCAMERA2SourceLabel.setFont(font4)
+        self.RTSPCAMERA2SourceLabel.setFont(font5)
 
         self.horizontalLayout_92.addWidget(self.RTSPCAMERA2SourceLabel)
 
         self.lineEditRTSPCAMERA2SourceText = QLineEdit(self.RTSPCAMERA2SourceFrame)
         self.lineEditRTSPCAMERA2SourceText.setObjectName(u"lineEditRTSPCAMERA2SourceText")
         self.lineEditRTSPCAMERA2SourceText.setMaximumSize(QSize(16777215, 50))
-        self.lineEditRTSPCAMERA2SourceText.setFont(font4)
+        self.lineEditRTSPCAMERA2SourceText.setFont(font5)
         self.lineEditRTSPCAMERA2SourceText.setStyleSheet(u"QLineEdit{\n"
 "	border-radius: 5px; \n"
 "	border: 2px solid #F1FA8C;\n"
@@ -1917,14 +1992,14 @@ class Ui_MainWindow(object):
         self.RTSPCAMERA3SourceLabel = QLabel(self.RTSPCAMERA3SourceFrame)
         self.RTSPCAMERA3SourceLabel.setObjectName(u"RTSPCAMERA3SourceLabel")
         self.RTSPCAMERA3SourceLabel.setMaximumSize(QSize(400, 100))
-        self.RTSPCAMERA3SourceLabel.setFont(font4)
+        self.RTSPCAMERA3SourceLabel.setFont(font5)
 
         self.horizontalLayout_94.addWidget(self.RTSPCAMERA3SourceLabel)
 
         self.lineEditRTSPCAMERA3SourceText = QLineEdit(self.RTSPCAMERA3SourceFrame)
         self.lineEditRTSPCAMERA3SourceText.setObjectName(u"lineEditRTSPCAMERA3SourceText")
         self.lineEditRTSPCAMERA3SourceText.setMaximumSize(QSize(16777215, 50))
-        self.lineEditRTSPCAMERA3SourceText.setFont(font4)
+        self.lineEditRTSPCAMERA3SourceText.setFont(font5)
         self.lineEditRTSPCAMERA3SourceText.setStyleSheet(u"QLineEdit{\n"
 "	border-radius: 5px; \n"
 "	border: 2px solid #F1FA8C;\n"
@@ -1961,14 +2036,14 @@ class Ui_MainWindow(object):
         self.RTSPCAMERA4SourceLabel = QLabel(self.RTSPCAMERA4SourceFrame)
         self.RTSPCAMERA4SourceLabel.setObjectName(u"RTSPCAMERA4SourceLabel")
         self.RTSPCAMERA4SourceLabel.setMaximumSize(QSize(400, 100))
-        self.RTSPCAMERA4SourceLabel.setFont(font4)
+        self.RTSPCAMERA4SourceLabel.setFont(font5)
 
         self.horizontalLayout_82.addWidget(self.RTSPCAMERA4SourceLabel)
 
         self.lineEditRTSPCAMERA4SourceText = QLineEdit(self.RTSPCAMERA4SourceFrame)
         self.lineEditRTSPCAMERA4SourceText.setObjectName(u"lineEditRTSPCAMERA4SourceText")
         self.lineEditRTSPCAMERA4SourceText.setMaximumSize(QSize(16777215, 50))
-        self.lineEditRTSPCAMERA4SourceText.setFont(font4)
+        self.lineEditRTSPCAMERA4SourceText.setFont(font5)
         self.lineEditRTSPCAMERA4SourceText.setStyleSheet(u"QLineEdit{\n"
 "	border-radius: 5px; \n"
 "	border: 2px solid #F1FA8C;\n"
@@ -2005,14 +2080,14 @@ class Ui_MainWindow(object):
         self.RTSPCAMERA5SourceLabel = QLabel(self.RTSPCAMERA5SourceFrame)
         self.RTSPCAMERA5SourceLabel.setObjectName(u"RTSPCAMERA5SourceLabel")
         self.RTSPCAMERA5SourceLabel.setMaximumSize(QSize(400, 100))
-        self.RTSPCAMERA5SourceLabel.setFont(font4)
+        self.RTSPCAMERA5SourceLabel.setFont(font5)
 
         self.horizontalLayout_96.addWidget(self.RTSPCAMERA5SourceLabel)
 
         self.lineEditRTSPCAMERA5SourceText = QLineEdit(self.RTSPCAMERA5SourceFrame)
         self.lineEditRTSPCAMERA5SourceText.setObjectName(u"lineEditRTSPCAMERA5SourceText")
         self.lineEditRTSPCAMERA5SourceText.setMaximumSize(QSize(16777215, 50))
-        self.lineEditRTSPCAMERA5SourceText.setFont(font4)
+        self.lineEditRTSPCAMERA5SourceText.setFont(font5)
         self.lineEditRTSPCAMERA5SourceText.setStyleSheet(u"QLineEdit{\n"
 "	border-radius: 5px; \n"
 "	border: 2px solid #F1FA8C;\n"
@@ -2049,14 +2124,14 @@ class Ui_MainWindow(object):
         self.RTSPCAMERA6SourceLabel = QLabel(self.RTSPCAMERA6SourceFrame)
         self.RTSPCAMERA6SourceLabel.setObjectName(u"RTSPCAMERA6SourceLabel")
         self.RTSPCAMERA6SourceLabel.setMaximumSize(QSize(400, 100))
-        self.RTSPCAMERA6SourceLabel.setFont(font4)
+        self.RTSPCAMERA6SourceLabel.setFont(font5)
 
         self.horizontalLayout_90.addWidget(self.RTSPCAMERA6SourceLabel)
 
         self.lineEditRTSPCAMERA6SourceText = QLineEdit(self.RTSPCAMERA6SourceFrame)
         self.lineEditRTSPCAMERA6SourceText.setObjectName(u"lineEditRTSPCAMERA6SourceText")
         self.lineEditRTSPCAMERA6SourceText.setMaximumSize(QSize(16777215, 50))
-        self.lineEditRTSPCAMERA6SourceText.setFont(font4)
+        self.lineEditRTSPCAMERA6SourceText.setFont(font5)
         self.lineEditRTSPCAMERA6SourceText.setStyleSheet(u"QLineEdit{\n"
 "	border-radius: 5px; \n"
 "	border: 2px solid #F1FA8C;\n"
@@ -2093,14 +2168,14 @@ class Ui_MainWindow(object):
         self.RTSPCAMERA7SourceLabel = QLabel(self.RTSPCAMERA7SourceFrame)
         self.RTSPCAMERA7SourceLabel.setObjectName(u"RTSPCAMERA7SourceLabel")
         self.RTSPCAMERA7SourceLabel.setMaximumSize(QSize(400, 100))
-        self.RTSPCAMERA7SourceLabel.setFont(font4)
+        self.RTSPCAMERA7SourceLabel.setFont(font5)
 
         self.horizontalLayout_84.addWidget(self.RTSPCAMERA7SourceLabel)
 
         self.lineEditRTSPCAMERA7SourceText = QLineEdit(self.RTSPCAMERA7SourceFrame)
         self.lineEditRTSPCAMERA7SourceText.setObjectName(u"lineEditRTSPCAMERA7SourceText")
         self.lineEditRTSPCAMERA7SourceText.setMaximumSize(QSize(16777215, 50))
-        self.lineEditRTSPCAMERA7SourceText.setFont(font4)
+        self.lineEditRTSPCAMERA7SourceText.setFont(font5)
         self.lineEditRTSPCAMERA7SourceText.setStyleSheet(u"QLineEdit{\n"
 "	border-radius: 5px; \n"
 "	border: 2px solid #F1FA8C;\n"
@@ -2137,14 +2212,14 @@ class Ui_MainWindow(object):
         self.RTSPCAMERA8SourceLabel = QLabel(self.RTSPCAMERA8SourceFrame)
         self.RTSPCAMERA8SourceLabel.setObjectName(u"RTSPCAMERA8SourceLabel")
         self.RTSPCAMERA8SourceLabel.setMaximumSize(QSize(400, 100))
-        self.RTSPCAMERA8SourceLabel.setFont(font4)
+        self.RTSPCAMERA8SourceLabel.setFont(font5)
 
         self.horizontalLayout_86.addWidget(self.RTSPCAMERA8SourceLabel)
 
         self.lineEditRTSPCAMERA8SourceText = QLineEdit(self.RTSPCAMERA8SourceFrame)
         self.lineEditRTSPCAMERA8SourceText.setObjectName(u"lineEditRTSPCAMERA8SourceText")
         self.lineEditRTSPCAMERA8SourceText.setMaximumSize(QSize(16777215, 50))
-        self.lineEditRTSPCAMERA8SourceText.setFont(font4)
+        self.lineEditRTSPCAMERA8SourceText.setFont(font5)
         self.lineEditRTSPCAMERA8SourceText.setStyleSheet(u"QLineEdit{\n"
 "	border-radius: 5px; \n"
 "	border: 2px solid #F1FA8C;\n"
@@ -2412,7 +2487,7 @@ class Ui_MainWindow(object):
         self.AButtonComboBox.addItem("")
         self.AButtonComboBox.setObjectName(u"AButtonComboBox")
         self.AButtonComboBox.setMaximumSize(QSize(16777215, 50))
-        self.AButtonComboBox.setFont(font4)
+        self.AButtonComboBox.setFont(font5)
         self.AButtonComboBox.setEditable(False)
 
         self.horizontalLayout_46.addWidget(self.AButtonComboBox)
@@ -2454,7 +2529,7 @@ class Ui_MainWindow(object):
         self.BButtonComboBox.addItem("")
         self.BButtonComboBox.setObjectName(u"BButtonComboBox")
         self.BButtonComboBox.setMaximumSize(QSize(16777215, 50))
-        self.BButtonComboBox.setFont(font4)
+        self.BButtonComboBox.setFont(font5)
         self.BButtonComboBox.setEditable(False)
 
         self.horizontalLayout_22.addWidget(self.BButtonComboBox)
@@ -2496,7 +2571,7 @@ class Ui_MainWindow(object):
         self.YButtonComboBox.addItem("")
         self.YButtonComboBox.setObjectName(u"YButtonComboBox")
         self.YButtonComboBox.setMaximumSize(QSize(16777215, 50))
-        self.YButtonComboBox.setFont(font4)
+        self.YButtonComboBox.setFont(font5)
 
         self.horizontalLayout_41.addWidget(self.YButtonComboBox)
 
@@ -2537,7 +2612,7 @@ class Ui_MainWindow(object):
         self.XButtonComboBox.addItem("")
         self.XButtonComboBox.setObjectName(u"XButtonComboBox")
         self.XButtonComboBox.setMaximumSize(QSize(16777215, 50))
-        self.XButtonComboBox.setFont(font4)
+        self.XButtonComboBox.setFont(font5)
 
         self.horizontalLayout_31.addWidget(self.XButtonComboBox)
 
@@ -2578,7 +2653,7 @@ class Ui_MainWindow(object):
         self.LBButtonComboBox.addItem("")
         self.LBButtonComboBox.setObjectName(u"LBButtonComboBox")
         self.LBButtonComboBox.setMaximumSize(QSize(16777215, 50))
-        self.LBButtonComboBox.setFont(font4)
+        self.LBButtonComboBox.setFont(font5)
 
         self.horizontalLayout_23.addWidget(self.LBButtonComboBox)
 
@@ -2619,7 +2694,7 @@ class Ui_MainWindow(object):
         self.RBButtonComboBox.addItem("")
         self.RBButtonComboBox.setObjectName(u"RBButtonComboBox")
         self.RBButtonComboBox.setMaximumSize(QSize(16777215, 50))
-        self.RBButtonComboBox.setFont(font4)
+        self.RBButtonComboBox.setFont(font5)
 
         self.horizontalLayout_38.addWidget(self.RBButtonComboBox)
 
@@ -2660,7 +2735,7 @@ class Ui_MainWindow(object):
         self.STARTButtonComboBox.addItem("")
         self.STARTButtonComboBox.setObjectName(u"STARTButtonComboBox")
         self.STARTButtonComboBox.setMaximumSize(QSize(16777215, 50))
-        self.STARTButtonComboBox.setFont(font4)
+        self.STARTButtonComboBox.setFont(font5)
 
         self.horizontalLayout_28.addWidget(self.STARTButtonComboBox)
 
@@ -2701,7 +2776,7 @@ class Ui_MainWindow(object):
         self.BACKButtonComboBox.addItem("")
         self.BACKButtonComboBox.setObjectName(u"BACKButtonComboBox")
         self.BACKButtonComboBox.setMaximumSize(QSize(16777215, 50))
-        self.BACKButtonComboBox.setFont(font4)
+        self.BACKButtonComboBox.setFont(font5)
 
         self.horizontalLayout_24.addWidget(self.BACKButtonComboBox)
 
@@ -2743,7 +2818,7 @@ class Ui_MainWindow(object):
         self.RIGHTPADButtonComboBox.addItem("")
         self.RIGHTPADButtonComboBox.setObjectName(u"RIGHTPADButtonComboBox")
         self.RIGHTPADButtonComboBox.setMaximumSize(QSize(16777215, 50))
-        self.RIGHTPADButtonComboBox.setFont(font4)
+        self.RIGHTPADButtonComboBox.setFont(font5)
 
         self.horizontalLayout_37.addWidget(self.RIGHTPADButtonComboBox)
 
@@ -2784,7 +2859,7 @@ class Ui_MainWindow(object):
         self.LEFTPADButtonComboBox.addItem("")
         self.LEFTPADButtonComboBox.setObjectName(u"LEFTPADButtonComboBox")
         self.LEFTPADButtonComboBox.setMaximumSize(QSize(16777215, 50))
-        self.LEFTPADButtonComboBox.setFont(font4)
+        self.LEFTPADButtonComboBox.setFont(font5)
 
         self.horizontalLayout_35.addWidget(self.LEFTPADButtonComboBox)
 
@@ -2825,7 +2900,7 @@ class Ui_MainWindow(object):
         self.HOMEButtonComboBox.addItem("")
         self.HOMEButtonComboBox.setObjectName(u"HOMEButtonComboBox")
         self.HOMEButtonComboBox.setMaximumSize(QSize(16777215, 50))
-        self.HOMEButtonComboBox.setFont(font4)
+        self.HOMEButtonComboBox.setFont(font5)
 
         self.horizontalLayout_29.addWidget(self.HOMEButtonComboBox)
 
@@ -2866,7 +2941,7 @@ class Ui_MainWindow(object):
         self.PADUPButtonComboBox.addItem("")
         self.PADUPButtonComboBox.setObjectName(u"PADUPButtonComboBox")
         self.PADUPButtonComboBox.setMaximumSize(QSize(16777215, 50))
-        self.PADUPButtonComboBox.setFont(font4)
+        self.PADUPButtonComboBox.setFont(font5)
 
         self.horizontalLayout_25.addWidget(self.PADUPButtonComboBox)
 
@@ -2907,7 +2982,7 @@ class Ui_MainWindow(object):
         self.PADDOWNButtonComboBox.addItem("")
         self.PADDOWNButtonComboBox.setObjectName(u"PADDOWNButtonComboBox")
         self.PADDOWNButtonComboBox.setMaximumSize(QSize(16777215, 50))
-        self.PADDOWNButtonComboBox.setFont(font4)
+        self.PADDOWNButtonComboBox.setFont(font5)
 
         self.horizontalLayout_36.addWidget(self.PADDOWNButtonComboBox)
 
@@ -2948,7 +3023,7 @@ class Ui_MainWindow(object):
         self.PADRIGHTButtonComboBox.addItem("")
         self.PADRIGHTButtonComboBox.setObjectName(u"PADRIGHTButtonComboBox")
         self.PADRIGHTButtonComboBox.setMaximumSize(QSize(16777215, 50))
-        self.PADRIGHTButtonComboBox.setFont(font4)
+        self.PADRIGHTButtonComboBox.setFont(font5)
 
         self.horizontalLayout_33.addWidget(self.PADRIGHTButtonComboBox)
 
@@ -2989,7 +3064,7 @@ class Ui_MainWindow(object):
         self.PADLEFTButtonComboBox.addItem("")
         self.PADLEFTButtonComboBox.setObjectName(u"PADLEFTButtonComboBox")
         self.PADLEFTButtonComboBox.setMaximumSize(QSize(16777215, 50))
-        self.PADLEFTButtonComboBox.setFont(font4)
+        self.PADLEFTButtonComboBox.setFont(font5)
 
         self.horizontalLayout_26.addWidget(self.PADLEFTButtonComboBox)
 
@@ -3027,7 +3102,7 @@ class Ui_MainWindow(object):
         self.RIGHTVERTICALAXISComboBox.addItem("")
         self.RIGHTVERTICALAXISComboBox.setObjectName(u"RIGHTVERTICALAXISComboBox")
         self.RIGHTVERTICALAXISComboBox.setMaximumSize(QSize(16777215, 50))
-        self.RIGHTVERTICALAXISComboBox.setFont(font4)
+        self.RIGHTVERTICALAXISComboBox.setFont(font5)
 
         self.horizontalLayout_40.addWidget(self.RIGHTVERTICALAXISComboBox)
 
@@ -3065,7 +3140,7 @@ class Ui_MainWindow(object):
         self.RIGHTHORIZONTALAXISComboBox.addItem("")
         self.RIGHTHORIZONTALAXISComboBox.setObjectName(u"RIGHTHORIZONTALAXISComboBox")
         self.RIGHTHORIZONTALAXISComboBox.setMaximumSize(QSize(16777215, 50))
-        self.RIGHTHORIZONTALAXISComboBox.setFont(font4)
+        self.RIGHTHORIZONTALAXISComboBox.setFont(font5)
 
         self.horizontalLayout_30.addWidget(self.RIGHTHORIZONTALAXISComboBox)
 
@@ -3103,7 +3178,7 @@ class Ui_MainWindow(object):
         self.LEFTVERTICALAXISComboBox.addItem("")
         self.LEFTVERTICALAXISComboBox.setObjectName(u"LEFTVERTICALAXISComboBox")
         self.LEFTVERTICALAXISComboBox.setMaximumSize(QSize(16777215, 50))
-        self.LEFTVERTICALAXISComboBox.setFont(font4)
+        self.LEFTVERTICALAXISComboBox.setFont(font5)
 
         self.horizontalLayout_27.addWidget(self.LEFTVERTICALAXISComboBox)
 
@@ -3141,7 +3216,7 @@ class Ui_MainWindow(object):
         self.LEFTHORIZONTALAXISComboBox.addItem("")
         self.LEFTHORIZONTALAXISComboBox.setObjectName(u"LEFTHORIZONTALAXISComboBox")
         self.LEFTHORIZONTALAXISComboBox.setMaximumSize(QSize(16777215, 50))
-        self.LEFTHORIZONTALAXISComboBox.setFont(font4)
+        self.LEFTHORIZONTALAXISComboBox.setFont(font5)
 
         self.horizontalLayout_39.addWidget(self.LEFTHORIZONTALAXISComboBox)
 
@@ -3179,7 +3254,7 @@ class Ui_MainWindow(object):
         self.RTButtonComboBox.addItem("")
         self.RTButtonComboBox.setObjectName(u"RTButtonComboBox")
         self.RTButtonComboBox.setMaximumSize(QSize(16777215, 50))
-        self.RTButtonComboBox.setFont(font4)
+        self.RTButtonComboBox.setFont(font5)
 
         self.horizontalLayout_32.addWidget(self.RTButtonComboBox)
 
@@ -3217,7 +3292,7 @@ class Ui_MainWindow(object):
         self.LTButtonComboBox.addItem("")
         self.LTButtonComboBox.setObjectName(u"LTButtonComboBox")
         self.LTButtonComboBox.setMaximumSize(QSize(16777215, 50))
-        self.LTButtonComboBox.setFont(font4)
+        self.LTButtonComboBox.setFont(font5)
 
         self.horizontalLayout_21.addWidget(self.LTButtonComboBox)
 
@@ -3242,11 +3317,11 @@ class Ui_MainWindow(object):
         self.horizontalLayout_14.setObjectName(u"horizontalLayout_14")
         self.saveControllerSettingButton = QPushButton(self.saveControllerSettingFrame)
         self.saveControllerSettingButton.setObjectName(u"saveControllerSettingButton")
-        font5 = QFont()
-        font5.setBold(False)
-        font5.setItalic(False)
-        font5.setUnderline(False)
-        self.saveControllerSettingButton.setFont(font5)
+        font6 = QFont()
+        font6.setBold(False)
+        font6.setItalic(False)
+        font6.setUnderline(False)
+        self.saveControllerSettingButton.setFont(font6)
         self.saveControllerSettingButton.setStyleSheet(u"QPushButton{\n"
 "	font-size: 20px;\n"
 "	border-radius: 5px; \n"
@@ -3321,7 +3396,7 @@ class Ui_MainWindow(object):
 
         self.retranslateUi(MainWindow)
 
-        self.mainBodyStackedWidget.setCurrentIndex(3)
+        self.mainBodyStackedWidget.setCurrentIndex(1)
         self.homePageStackedWidget.setCurrentIndex(0)
 
 
@@ -3337,6 +3412,7 @@ class Ui_MainWindow(object):
         self.exitButton.setText("")
         self.homeButton.setText(QCoreApplication.translate("MainWindow", u"Home", None))
         self.cameraButton.setText(QCoreApplication.translate("MainWindow", u"Camera", None))
+        self.ocrButton.setText(QCoreApplication.translate("MainWindow", u"OCR", None))
         self.settingsButton.setText(QCoreApplication.translate("MainWindow", u"Settings", None))
         self.mainHomePageTopLeftCameraLabel.setText("")
         self.mainHomePageTopLeftCamerasNumberLabel.setText(QCoreApplication.translate("MainWindow", u"Camera1", None))
@@ -3377,6 +3453,8 @@ class Ui_MainWindow(object):
         self.headingReadingLabel.setText(QCoreApplication.translate("MainWindow", u"300", None))
         self.depthLabel.setText(QCoreApplication.translate("MainWindow", u"Depth", None))
         self.depthReadingLabel.setText(QCoreApplication.translate("MainWindow", u"20", None))
+        self.ocrResults.setText("")
+        self.ocrTextSubmitButton.setText(QCoreApplication.translate("MainWindow", u"Submit Text", None))
         self.OAKCameraLocationLabel.setText(QCoreApplication.translate("MainWindow", u"OAKCameraLocation", None))
         self.OAKCameraLocationComboBox.setItemText(0, QCoreApplication.translate("MainWindow", u"Camera1", None))
         self.OAKCameraLocationComboBox.setItemText(1, QCoreApplication.translate("MainWindow", u"Camera2", None))

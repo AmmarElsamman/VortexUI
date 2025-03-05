@@ -28,6 +28,8 @@ class VortexPilotProxy(VortexPilotingInterfaces):
         # interfacing with vortex pilot
         self.vortexPilot = vortexPilot
         
+        self.armed = False
+        
         # interfacing with widgets
         self.indicatorsPainter = indicatorsPainter
         self.circularGaugePainter = circularGaugePainter
@@ -101,9 +103,12 @@ class VortexPilotProxy(VortexPilotingInterfaces):
     def arming(self, buttonEvent: str):
         self.vortexPilot.arming(buttonEvent=buttonEvent)
         if buttonEvent == "JOYBUTTONDOWN":
-            self.indicatorsPainter(Indicators.Arming)
-        elif buttonEvent == "JOYBUTTONUP":
-            self.indicatorsPainter(Indicators.Arming, PAINT_BORDERS=False)
+            if(self.armed):
+                self.indicatorsPainter(Indicators.Arming, PAINT_BORDERS=False)
+            else:
+                self.indicatorsPainter(Indicators.Arming)
+            self.armed = not self.armed
+        
 
     def cameraSwitch(self, buttonEvent: str):
         if self.cameraSwitchEvent == buttonEvent:

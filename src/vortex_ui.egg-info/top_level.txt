@@ -2,5 +2,6 @@ VortexCameras
 VortexCompanionController
 VortexController
 VortexInterfaces
+VortexOcr
 VortexPilot
 VortexStation

@@ -1,6 +1,7 @@
 import sys
 import os
 import threading
+from VortexOcr import VortexOcr
 from PyQt5.QtWidgets import QApplication, QMainWindow, QSizeGrip, QPushButton, QVBoxLayout
 from PyQt5.QtCore import Qt, QPropertyAnimation, QEasingCurve, QSettings
 from PyQt5.QtGui import QIcon, QPixmap, QImage
@@ -185,6 +186,10 @@ class VortexMainWindow(QMainWindow, Ui_MainWindow):
         self.settingsButton.clicked.connect(lambda: self.mainBodyStackedWidget.setCurrentWidget(self.settingsPage))
         self.controllerSettingsButton.clicked.connect(lambda: self.mainBodyStackedWidget.setCurrentWidget(self.controllerSettingsPage))
         self.cameraSettingsButton.clicked.connect(lambda: self.mainBodyStackedWidget.setCurrentWidget(self.cameraSettingsPage))
+        self.ocrButton.clicked.connect(lambda: self.mainBodyStackedWidget.setCurrentWidget(self.ocrPage))
+        
+        # OCR submit button
+        self.ocrTextSubmitButton.clicked.connect(lambda: self.ocrTextSubmitButtonLogic())
 
         # ControllerSettingsPage Save Button Logic
         self.saveControllerSettingButton.clicked.connect(lambda: self.saveControllerSettingsButtonLogic())
@@ -284,6 +289,13 @@ class VortexMainWindow(QMainWindow, Ui_MainWindow):
         pixmap = QPixmap.fromImage(qImg)
         scaledPixmap = pixmap.scaled(self.cameraLabels[cameraLabel].size(), Qt.IgnoreAspectRatio)
         self.cameraLabels[cameraLabel].setPixmap(scaledPixmap)
+
+
+
+    def ocrTextSubmitButtonLogic(self):
+        vortexOcr = VortexOcr()
+        result = vortexOcr.SubmitText()
+        self.ocrResults.setText(result)
 
     def readingsLabelUpdater(self, key, value):
         # Update compass when heading changes

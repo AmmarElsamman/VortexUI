@@ -1,6 +1,7 @@
 import sys
 import os
 import threading
+from VortexOcr import VortexOcr
 from PyQt5.QtWidgets import QApplication, QMainWindow, QSizeGrip, QPushButton, QVBoxLayout
 from PyQt5.QtCore import Qt, QPropertyAnimation, QEasingCurve, QSettings
 from PyQt5.QtGui import QIcon, QPixmap, QImage
@@ -53,11 +54,6 @@ class VortexMainWindow(QMainWindow, Ui_MainWindow):
         self.compassLayout.setContentsMargins(0, 0, 0, 0)
         self.compassLayout.addWidget(self.compass)
         
-        # Add compass widget to CompassFrame_2 (secondary page)
-        self.compass2 = CompassWidget(self.CompassFrame_2)
-        self.compassLayout2 = QVBoxLayout(self.CompassFrame_2)
-        self.compassLayout2.setContentsMargins(0, 0, 0, 0)
-        self.compassLayout2.addWidget(self.compass2)
         
         # Add artificial horizon widget to artificialHorizonFrame
         self.artificialHorizon = ArtificialHorizonWidget(self.artificialHorizonFrame)
@@ -190,6 +186,10 @@ class VortexMainWindow(QMainWindow, Ui_MainWindow):
         self.settingsButton.clicked.connect(lambda: self.mainBodyStackedWidget.setCurrentWidget(self.settingsPage))
         self.controllerSettingsButton.clicked.connect(lambda: self.mainBodyStackedWidget.setCurrentWidget(self.controllerSettingsPage))
         self.cameraSettingsButton.clicked.connect(lambda: self.mainBodyStackedWidget.setCurrentWidget(self.cameraSettingsPage))
+        self.ocrButton.clicked.connect(lambda: self.mainBodyStackedWidget.setCurrentWidget(self.ocrPage))
+        
+        # OCR submit button
+        self.ocrTextSubmitButton.connect(lambda: self.ocrTextSubmitButtonLogic())
 
         # ControllerSettingsPage Save Button Logic
         self.saveControllerSettingButton.clicked.connect(lambda: self.saveControllerSettingsButtonLogic())
@@ -289,6 +289,13 @@ class VortexMainWindow(QMainWindow, Ui_MainWindow):
         pixmap = QPixmap.fromImage(qImg)
         scaledPixmap = pixmap.scaled(self.cameraLabels[cameraLabel].size(), Qt.IgnoreAspectRatio)
         self.cameraLabels[cameraLabel].setPixmap(scaledPixmap)
+
+
+
+    def ocrTextSubmitButtonLogic(self):
+        vortexOcr = VortexOcr()
+        result = vortexOcr.SubmitText()
+        self.ocrResults.setText(result)
 
     def readingsLabelUpdater(self, key, value):
         # Update compass when heading changes
@@ -435,6 +442,7 @@ class VortexMainWindow(QMainWindow, Ui_MainWindow):
             "Surge": VortexPilotAction.Surge,
             "Sway": VortexPilotAction.Sway,
             "Yaw": VortexPilotAction.Yaw,
+            "Arming": VortexPilotAction.Arming,
             "None": ""
         }
 
@@ -505,6 +513,7 @@ class VortexMainWindow(QMainWindow, Ui_MainWindow):
             "Surge": VortexPilotAction.Surge,
             "Sway": VortexPilotAction.Sway,
             "Yaw": VortexPilotAction.Yaw,
+            "Arming": VortexPilotAction.Arming,
             "None": ""
         }
 
@@ -589,8 +598,8 @@ class VortexMainWindow(QMainWindow, Ui_MainWindow):
             newButtonsActionMapping[JoystickButtons.HOME.value] = settingsActionMapping[self.settingsINI.value("HOME")]
             self.HOMEButtonComboBox.setCurrentText(self.settingsINI.value("HOME"))
         else:
-            newButtonsActionMapping[JoystickButtons.HOME.value] = ""
-            self.HOMEButtonComboBox.setCurrentText("None")
+            newButtonsActionMapping[JoystickButtons.HOME.value] = VortexPilotAction.Arming
+            self.HOMEButtonComboBox.setCurrentText("Arming")
 
         # loading joystick axes mapping from INI file.
         if self.settingsINI.contains("RIGHTHORIZONTALAXIS"):

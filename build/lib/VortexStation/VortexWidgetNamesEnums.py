@@ -47,6 +47,7 @@ class VortexPilotAction(Enum):
     Surge = 14
     Sway = 15
     Yaw = 17
+    Arming = 18
 
 class JoystickButtons(Enum):
     A = 0 

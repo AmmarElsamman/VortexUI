@@ -17,6 +17,7 @@
         <file>feather/camera.svg</file>
         <file>feather/home.svg</file>
         <file>feather/settings.svg</file>
+        <file>feather/file-text.svg</file>
     </qresource>
     <qresource prefix="/controllerImage">
         <file>Xbox Series Button Icons and Controls/Xbox Series Button Icons and Controls/Control Screen/Solid/Control Solid Inv 4k.png</file>
